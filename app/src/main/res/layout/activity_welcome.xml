@@ -96,7 +96,7 @@
         android:id="@+id/btnAccept"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="I have read and agree to above terms"
+        android:text="I have read and Agree to above terms"
         android:textStyle="italic"
         android:shadowColor="@android:color/transparent"
         android:padding="15dp"
