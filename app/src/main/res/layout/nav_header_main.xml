@@ -2,8 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/nav_header_height"
-    android:background="#000000"
+    android:layout_height="wrap_content"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -12,25 +11,109 @@
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:theme="@style/ThemeOverlay.AppCompat.Dark">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/nav_header_desc"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        app:srcCompat="@mipmap/ic_launcher_round" />
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:text="@string/nav_header_title"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+
+        >
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/hamro"
+
+            />
+
+        <TextView
+            android:id="@+id/idHome"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:text="Home"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:shadowColor="@android:color/transparent"
+            android:paddingTop="10dp"
+            android:textColor="@color/black"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp"
+
+            />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#878b8c" />
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+        android:layout_width="120dp"
+        android:layout_height="30dp"
+        android:text="SEARCH FOR AD"
+        android:textSize="16dp"
+        android:textStyle="italic"
+        android:shadowColor="@android:color/transparent"
+        android:textColor="#989d9e"
+        android:layout_marginTop="10dp" />
+
+    <CheckBox
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/nav_header_subtitle" />
+        android:text="Find Ads in All Categories."
+        android:textColor="@color/black"
+        android:checked="true"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+
+        >
+
+
+        <TextView
+            android:layout_width="190dp"
+            android:layout_height="40dp"
+            android:text="Find what your are looking for?"
+            android:layout_marginLeft="10dp"
+            android:textStyle="italic"
+            android:shadowColor="@android:color/transparent"
+            android:paddingTop="10dp"
+            android:textSize="13dp"
+            android:textColor="#909899"
+            android:onClick="onClick"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp"
+
+            />
+
+
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/ic_search_black_24dp"
+            android:background="@color/colorPrimary"
+
+            />
+
+
+
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorPrimary" />
+
+    <TextView
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:text="BROWSE BY CATEGORIES"
+        android:textStyle="italic"
+        android:textSize="16dp"
+        android:shadowColor="@android:color/transparent"
+        android:textColor="#989d9e"
+        android:layout_marginTop="10dp" />
 
 </LinearLayout>

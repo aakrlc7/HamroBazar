@@ -3,26 +3,579 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:fitsSystemWindows="true"
     android:orientation="vertical"
-    tools:context=".fragment.HomeFragment">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:minHeight="?attr/actionBarSize"
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    >
+    <include
+        layout="@layout/activity_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+
+        />
+
+</LinearLayout>
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:titleTextColor="@android:color/white"
-        android:background="#FFFFFF">
-
-       <!-- <ImageView
-            android:layout_width="match_parent"
+        >
+        <TextView
+            android:layout_width="210dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/top" />-->
-    </androidx.appcompat.widget.Toolbar>
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:text="   Popular Trending Ads"
 
+            />
+
+        <Button
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="MORE"
+            android:textStyle="italic"
+            android:shadowColor="@android:color/transparent"
+            android:padding="15dp"
+            android:layout_marginLeft="70dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp"
+            android:background="#04abd1"
+            android:textColor="#FFFFFF"
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Laptops/Notebooks"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_laptop_mac_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Laptops/Notebooks"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_laptop_mac_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Laptops/Notebooks"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_laptop_mac_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Laptops/Notebooks"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_laptop_mac_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Laptops/Notebooks"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_laptop_mac_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="120dp"
+            android:layout_height="200dp"
+            android:layout_marginLeft="20dp"
+
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <TextView
+                    android:layout_width="280dp"
+                    android:layout_height="40dp"
+                    android:text="Find what your are looking for?"
+                    android:layout_marginLeft="20dp"
+                    android:textStyle="italic"
+                    android:shadowColor="@android:color/transparent"
+                    android:paddingTop="10dp"
+                    android:textSize="13dp"
+                    android:drawableRight="@drawable/ic_search_black_24dp"
+                    android:textColor="#909899"
+                    android:layout_marginTop="10dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary" />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Post FREE Ad"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_create_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="  Mobile Handset"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textStyle="italic"
+                    android:drawableLeft="@drawable/ic_smartphone_black_24dp"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey" />
+
+
+
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </LinearLayout>
+    </ScrollView>
+
+   <!--  <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/etradius"
+        android:text="enter radius"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        android:textSize="20dp"
+
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:id="@+id/btnarea"
+        android:hint="Calculate"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        />
+
+
+
+    <TextView
+        android:id="@+id/tvresult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="25dp"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        />-->
 
 
 </LinearLayout>

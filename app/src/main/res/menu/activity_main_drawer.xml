@@ -6,23 +6,39 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:title="Home" />
+            android:title="Real Estate"
+            android:icon="@drawable/ic_home_black_24dp"
+            />
         <item
             android:id="@+id/nav_profile"
-            android:title="Search By Category" />
+            android:title="Mobiles and Accessories"
+            android:icon="@drawable/ic_phone_android_black_24dp"
+            />
         <item
             android:id="@+id/nav_orders"
-            android:title="My Profile" />
+            android:title="Music Instrument"
+            android:icon="@drawable/ic_queue_music_black_24dp"
+            />
         <item
             android:id="@+id/nav_cat"
-            android:title="Category" />
+            android:title="Computer and peripherals"
+            android:icon="@drawable/ic_laptop_chromebook_black_24dp"
+            />
     </group>
 
     <item android:title="Others">
         <menu>
             <item
                 android:id="@+id/nav_rate"
-                android:title="Rate Our App" />
+                android:title="Books and Learning"
+                android:icon="@drawable/ic_library_books_black_24dp"
+                />
+
+            <item
+                android:id="@+id/nav_ratee"
+                android:title="Electronics"
+                android:icon="@drawable/ic_live_tv_black_24dp"
+                />
 
         </menu>
     </item>
