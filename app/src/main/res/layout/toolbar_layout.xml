@@ -17,18 +17,23 @@
         android:background="#FFFFFF">
 
         <ImageView
+
             android:id="@+id/img"
-            android:layout_width="250dp"
+            android:layout_width="240dp"
             android:layout_height="50dp"
             android:src="@drawable/top" />
-        <TextView
+      <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/displayText" />
-       <!-- <ImageView
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:src="@drawable/user" />-->
+
+
+        <ImageView
+            android:id="@+id/miProfile"
+            android:onClick="ShowPopup"
+             android:layout_width="30dp"
+             android:layout_height="40dp"
+             android:src="@drawable/user" />
     </androidx.appcompat.widget.Toolbar>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
