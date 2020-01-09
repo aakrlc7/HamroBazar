@@ -1,36 +1,21 @@
 package com.aakriti.hamrobazar;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.MenuPopupWindow;
 import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 
-import android.app.ActivityOptions;
-import android.app.Dialog;
-import android.content.Intent;
 import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.TextView;
 
-import com.aakriti.hamrobazar.fragment.HomeFragment;
 import com.google.android.material.navigation.NavigationView;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
@@ -39,9 +24,12 @@ import com.smarteist.autoimageslider.SliderView;
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = "";
     private AppBarConfiguration mAppBarConfiguration;
-    ImageView img;
+    //ImageView img;
     SliderView sliderView;
-    Dialog myDialog;
+    // Dialog myDialog;
+    // Button signup;
+    ImageView miProfile;
+    ImageView imgProgileImg;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -49,14 +37,27 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+     //   loadCurrentUser();
+
         //forpopup login
-        myDialog = new Dialog(this);
-
-
-
+        // myDialog = new Dialog(this);
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        //////
+        miProfile = findViewById(R.id.miProfile);
+
+        miProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                openDialog();
+            }
+        });
+
+        //  signup = findViewById(R.id.btnRegister);
+
+
+
 
        /* ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -95,11 +96,17 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void ShowPopup(View v) {
+
+    private void openDialog() {
+        LoginDialogActivity loginDialogActivity = new LoginDialogActivity();
+        loginDialogActivity.show(getSupportFragmentManager(), "login dialog");
+    }
+
+   /* public void ShowPopup(View v) {
         TextView txtclose;
         Button btnFollow;
         myDialog.setContentView(R.layout.activity_login);
-           /* txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
+           *//* txtclose =(TextView) myDialog.findViewById(R.id.txtclose);
             txtclose.setText("M");
             btnFollow = (Button) myDialog.findViewById(R.id.btnfollow);
             txtclose.setOnClickListener(new View.OnClickListener() {
@@ -107,10 +114,10 @@ public class MainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     myDialog.dismiss();
                 }
-            });*/
+            });*//*
         myDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         myDialog.show();
-    }
+    }*/
 
 
     @Override
@@ -121,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
         return true;
 
     }
+
 
     @Override
     public boolean onSupportNavigateUp() {
@@ -170,7 +178,7 @@ public class MainActivity extends AppCompatActivity {
         }*//*
     }*/
 
-    @Override
+/*    @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == 100) {
@@ -180,6 +188,42 @@ public class MainActivity extends AppCompatActivity {
                 Log.d(LOG_TAG, "onActivityResult: canceled");
             }
         }
-    }
+    }*/
+/*
+    private void loadCurrentUser() {
+
+        UserAPI usersAPI = URL.getInstance().create(UserAPI.class);
+        Call<Users> userCall = usersAPI.getUserDetails(URL.token);
+
+        userCall.enqueue(new Callback<Users>() {
+            @Override
+            public void onResponse(Call<Users> call, Response<Users> response) {
+                if (!response.isSuccessful()) {
+                    Toast.makeText(MainActivity.this, "Code " + response.code(), Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                String imgPath = URL.imagePath + response.body().getImage();
+
+                Picasso.get().load(imgPath).into(imgProgileImg);
+
+
+//                StrictModeClass.StrictMode();
+//                try {
+//                    URL url = new URL(imgPath);
+//                    imgProgileImg.setImageBitmap(BitmapFactory.decodeStream((InputStream) url.getContent()));
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+            }
+
+            @Override
+            public void onFailure(Call<Users> call, Throwable t) {
+
+                Toast.makeText(MainActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });*/
+
+
+    //}
 }
 

@@ -11,9 +11,24 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+       <!-- <ImageView
+            android:layout_gravity="center"
+            android:src="@drawable/noimage"
+            android:id="@+id/imgProgileImg"
+            android:layout_marginTop="200dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"/>
+-->
+    </LinearLayout>
 
 
-      <include
+
+    <include
           layout="@layout/app_bar_main"
           android:layout_width="match_parent"
           android:layout_height="match_parent" />
@@ -65,7 +80,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
-
 
    <!-- <include
         layout="@layout/activity_image_slider"

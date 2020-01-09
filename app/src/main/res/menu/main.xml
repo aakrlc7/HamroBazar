@@ -7,10 +7,11 @@
     >
 
 
-   <!-- <item
+    <!--<item
         android:id="@+id/miProfile"
         android:icon="@drawable/user"
         app:showAsAction="always"
+
         android:title="Profile"
         android:orderInCategory="100"
         >
