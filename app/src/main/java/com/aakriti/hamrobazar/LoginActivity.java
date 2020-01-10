@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
         //binding
         etUsername = findViewById(R.id.etUsernameL);
         etPassword = findViewById(R.id.etPasswordL);
-        btnLogin = findViewById(R.id.btnLoginL);
+        //btnLogin = findViewById(R.id.btnLoginL);
        /* btnSignup = findViewById(R.id.btnRegister);
 
         btnSignup.setOnClickListener(new View.OnClickListener() {

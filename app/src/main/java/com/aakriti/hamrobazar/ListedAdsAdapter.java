@@ -18,9 +18,11 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import de.hdodenhof.circleimageview.CircleImageView;
+
 public class ListedAdsAdapter extends RecyclerView.Adapter<ListedAdsAdapter.ListedAdsViewHolder> {
 
-    ImageView imageAd;
+    CircleImageView imageAd;
     Context mContext;
     List<ListedAds> listedAdsList;
     public ListedAdsAdapter(Context mContext,List<ListedAds> listedAdsList){

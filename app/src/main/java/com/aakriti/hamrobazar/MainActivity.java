@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
     // Button signup;
     ImageView miProfile;
     ImageView imgProgileImg;
-    private RecyclerView recyclerView, recyclerViews;
+   // private RecyclerView recyclerView, recyclerViews;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
 
         loadCurrentUser();
 
-        recyclerView=findViewById(R.id.recyclerView);
+     /*   recyclerView=findViewById(R.id.recyclerView);
 
 
         //instance for interface
@@ -105,10 +105,10 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-        });
+        });*/
 
 
-        recyclerViews=findViewById(R.id.recyclerViews);
+       /* recyclerViews=findViewById(R.id.recyclerViews);
         Call<List<TrendingAds>> listCall1=usersAPI.getTrentedAds();
 
         listCall1.enqueue(new Callback<List<TrendingAds>>() {
@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
                    public void onFailure(Call<List<TrendingAds>> call, Throwable t) {
 
                      }
-        });
+        });*/
 
 
         miProfile.setOnClickListener(new View.OnClickListener() {

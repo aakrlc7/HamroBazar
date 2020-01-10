@@ -38,7 +38,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private CircleImageView imgProfile;
     private EditText etFullname, etEmail, etPasswordR, etConfirmPass,etPhone,etMobile, etAddress1,etAddress2,etAddress3;
-    private Button btnSignup, btnClick;
+    private Button btnSignup;
     String imagePath;
     private String imageName = "";
 
@@ -50,7 +50,6 @@ public class RegisterActivity extends AppCompatActivity {
 
       //  spinAddress3=findViewById(R.id.spinAddress3);
         btnSignup= findViewById(R.id.btnSignupR);
-        btnClick= findViewById(R.id.btnClick);
         imgProfile = findViewById(R.id.imgProfile);
         etFullname = findViewById(R.id.etFullname);
         etEmail = findViewById(R.id.etEmail);
@@ -74,15 +73,6 @@ public class RegisterActivity extends AppCompatActivity {
 */
 
 
-     btnClick.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             Intent intent = new Intent(RegisterActivity.this, LoginDialogActivity.class);
-             startActivity(intent);
-             finish();
-
-         }
-     });
         imgProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
