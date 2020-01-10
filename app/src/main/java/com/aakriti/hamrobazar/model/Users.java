@@ -9,7 +9,6 @@ public class Users {
     private String address1;
     private String address2;
     private String address3;
-
     private String image;
 
     public Users(String fullname, String email, String password, String phone, String mobilephone, String address1, String address2, String address3, String image) {

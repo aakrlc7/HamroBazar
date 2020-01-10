@@ -36,16 +36,15 @@
             android:textColor="@color/black"
             />
 
+
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
             android:layout_marginTop="-10dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="14dp"
-            android:backgroundTint="#04abd1"
-            />
-
+            android:backgroundTint="#04abd1" />
 
         <TextView
             android:layout_width="match_parent"
@@ -176,11 +175,10 @@
             android:id="@+id/etAddress1"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="14dp"
             android:layout_marginTop="-10dp"
             android:layout_marginBottom="15dp"
-            android:layout_marginLeft="14dp"
-            android:backgroundTint="#04abd1"
-            />
+            android:backgroundTint="#04abd1" />
 
         <TextView
             android:layout_width="match_parent"
@@ -295,8 +293,6 @@
 
             android:textColor="#FFFFFF"
              />
-
-
     </LinearLayout>
 
 </ScrollView>

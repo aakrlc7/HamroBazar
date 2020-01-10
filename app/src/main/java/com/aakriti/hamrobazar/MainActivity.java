@@ -8,18 +8,34 @@ import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.Toast;
 
+import com.aakriti.hamrobazar.api.UsersAPI;
+import com.aakriti.hamrobazar.model.ListedAds;
+import com.aakriti.hamrobazar.model.TrendingAds;
+import com.aakriti.hamrobazar.model.Users;
+import com.aakriti.hamrobazar.url.URL;
 import com.google.android.material.navigation.NavigationView;
 import com.smarteist.autoimageslider.IndicatorAnimations;
 import com.smarteist.autoimageslider.SliderAnimations;
 import com.smarteist.autoimageslider.SliderView;
+import com.squareup.picasso.Picasso;
+
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     private static final String LOG_TAG = "";
@@ -30,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     // Button signup;
     ImageView miProfile;
     ImageView imgProgileImg;
+    private RecyclerView recyclerView, recyclerViews;
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -37,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-     //   loadCurrentUser();
+
 
         //forpopup login
         // myDialog = new Dialog(this);
@@ -46,6 +63,78 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         //////
         miProfile = findViewById(R.id.miProfile);
+        imgProgileImg = findViewById(R.id.imgProgileImg);
+
+        loadCurrentUser();
+
+        recyclerView=findViewById(R.id.recyclerView);
+
+
+        //instance for interface
+        UsersAPI usersAPI = URL.getInstance().create(UsersAPI.class);
+        Call<List<ListedAds>> listCall=usersAPI.getListedAds();
+
+
+
+        //asynchronous
+        listCall.enqueue(new Callback<List<ListedAds>>() {
+            @Override
+            public void onResponse(Call<List<ListedAds>> call, Response<List<ListedAds>> response) {
+                if(!response.isSuccessful()){
+                    Toast.makeText(MainActivity.this, "Error code"+response.code(), Toast.LENGTH_SHORT).show();
+                    Log.d("msg","onFailure"+ response.code());
+
+                    return;
+                }
+
+                List<ListedAds> listedAdsList = response.body();
+
+                ListedAdsAdapter listedAdsAdapter = new ListedAdsAdapter(MainActivity.this,listedAdsList);
+                recyclerView.setAdapter(listedAdsAdapter);
+                recyclerView.setLayoutManager(new LinearLayoutManager(MainActivity.this,LinearLayoutManager.HORIZONTAL,false));
+
+
+
+            }
+
+
+            @Override
+            public void onFailure(Call<List<ListedAds>> call, Throwable t) {
+                Log.d("msg","onFailure"+t.getLocalizedMessage());
+                Toast.makeText(MainActivity.this, "Error"+t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+
+            }
+
+        });
+
+
+        recyclerViews=findViewById(R.id.recyclerViews);
+        Call<List<TrendingAds>> listCall1=usersAPI.getTrentedAds();
+
+        listCall1.enqueue(new Callback<List<TrendingAds>>() {
+         @Override
+           public void onResponse(Call<List<TrendingAds>> call, Response<List<TrendingAds>> response) {
+             if (!response.isSuccessful()) {
+              Toast.makeText(MainActivity.this, "Error code" + response.code(), Toast.LENGTH_SHORT).show();
+                Log.d("msg", "onFailure" + response.code());
+
+                   return;
+                   }
+
+               List<TrendingAds> trendingAdsList = response.body();
+
+                 TrendingAdsAdapter trendingAdsAdapter = new TrendingAdsAdapter(MainActivity.this, trendingAdsList);
+                 recyclerViews.setAdapter(trendingAdsAdapter);
+                 recyclerViews.setLayoutManager(new LinearLayoutManager(MainActivity.this, LinearLayoutManager.HORIZONTAL, false));
+
+
+                   }
+                   @Override
+                   public void onFailure(Call<List<TrendingAds>> call, Throwable t) {
+
+                     }
+        });
+
 
         miProfile.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,18 +143,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        //  signup = findViewById(R.id.btnRegister);
 
-
-
-
-       /* ActionBar actionBar = getSupportActionBar();
-        if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-        }*/
-
-
-        //  getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         final DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
@@ -79,7 +157,7 @@ public class MainActivity extends AppCompatActivity {
                 .build();
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
-        NavigationUI.setupWithNavController(navigationView, navController);
+       NavigationUI.setupWithNavController(navigationView, navController);
 
         sliderView = findViewById(R.id.imageSlider);
 
@@ -138,61 +216,12 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
 
-        if (item.getItemId() == android.R.id.home) {
-            setResult(RESULT_CANCELED);
-            onBackPressed();
-        } else if (item.getItemId() == R.id.miProfile) {
-            // just a hardcoded value
-            setResult(RESULT_OK, new Intent().putExtra("sortBy", "name"));
-            onBackPressed();
-        }
-        return true;
 
-       *//* TextView displayText = (TextView) findViewById(R.id.displayText);
 
-        switch (item.getItemId()) {
-            case R.id.miProfile:
-                finish();
-                Intent intent = new Intent(this, LoginActivity.class);
-                startActivity(intent);
-
-                startActivity(new Intent(this, LoginActivity.class),
-                        ActivityOptions.makeSceneTransitionAnimation(this).toBundle());
-
-                return true;
-
-               *//**//* case R.id.miProfile:
-                if (DrawerLayout.isDrawerOpen(GravityCompat.END))
-                    DrawerLayout.openDrawer(GravityCompat.END);
-                else {
-                    DrawerLayout.closeDrawer(GravityCompat.END);
-                }
-                return true;*//**//*
-
-            default:
-                return super.onOptionsItemSelected(item);
-        }*//*
-    }*/
-
-/*    @Override
-    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == 100) {
-            if (resultCode == RESULT_OK) {
-                Log.d(LOG_TAG, "onActivityResult: sortBy " + data.getStringExtra("sortBy"));
-            } else {
-                Log.d(LOG_TAG, "onActivityResult: canceled");
-            }
-        }
-    }*/
-/*
     private void loadCurrentUser() {
 
-        UserAPI usersAPI = URL.getInstance().create(UserAPI.class);
+        UsersAPI usersAPI = URL.getInstance().create(UsersAPI.class);
         Call<Users> userCall = usersAPI.getUserDetails(URL.token);
 
         userCall.enqueue(new Callback<Users>() {
@@ -221,9 +250,8 @@ public class MainActivity extends AppCompatActivity {
 
                 Toast.makeText(MainActivity.this, "Error " + t.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
             }
-        });*/
+        });
 
-
-    //}
+    }
 }
 

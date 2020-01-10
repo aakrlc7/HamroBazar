@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.aakriti.hamrobazar">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -16,16 +17,16 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".LoginDialogActivity"></activity>
+        <activity android:name=".TrendingAdsAdapter" />
+        <activity android:name=".ListedAdsAdapter" />
+        <activity android:name=".LoginDialogActivity" />
         <activity android:name=".CardViewActivity" />
         <activity android:name=".TermsUI.AdRulesActivity" />
         <activity android:name=".TermsUI.SafetyTips" />
         <activity android:name=".TermsUI.TermsofUse" />
         <activity android:name=".WelcomeActivity" />
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".LoginActivity">
-
-        </activity>
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,8 +1,12 @@
 package com.aakriti.hamrobazar.api;
 
+import com.aakriti.hamrobazar.model.ListedAds;
+import com.aakriti.hamrobazar.model.TrendingAds;
 import com.aakriti.hamrobazar.model.Users;
 import com.aakriti.hamrobazar.serverresponse.ImageResponse;
 import com.aakriti.hamrobazar.serverresponse.SignUpResponse;
+
+import java.util.List;
 
 import okhttp3.MultipartBody;
 import retrofit2.Call;
@@ -30,4 +34,10 @@ public interface UsersAPI {
 
     @GET("users/me")
     Call<Users> getUserDetails(@Header("Authorization")String token);
+
+    @GET("trendingads")
+    Call<List<TrendingAds>>getTrentedAds();
+
+    @GET("listedads")
+    Call<List<ListedAds>>getListedAds();
 }
