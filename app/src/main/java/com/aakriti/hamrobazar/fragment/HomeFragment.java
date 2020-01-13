@@ -41,7 +41,6 @@ import retrofit2.Response;
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-
     private RecyclerView recyclerView, recyclerViews;
 
 
@@ -52,13 +51,9 @@ public class HomeFragment extends Fragment {
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         recyclerView= root.findViewById(R.id.recyclerView);
-
-
         //instance for interface
         UsersAPI usersAPI = URL.getInstance().create(UsersAPI.class);
         Call<List<ListedAds>> listCall=usersAPI.getListedAds();
-
-
 
         //asynchronous
         listCall.enqueue(new Callback<List<ListedAds>>() {
@@ -121,10 +116,6 @@ public class HomeFragment extends Fragment {
         });
 
         return root;
-
-
-
-
     }
 
     }
