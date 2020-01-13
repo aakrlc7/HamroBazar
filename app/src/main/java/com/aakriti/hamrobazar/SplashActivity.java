@@ -21,7 +21,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void run() {
                 checkUser();
-                Intent intent = new Intent(SplashActivity.this, LoginActivity.class);
+                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
                 startActivity(intent);
                 finish();
 
@@ -39,7 +39,7 @@ public class SplashActivity extends AppCompatActivity {
                 password.equals("admin")) {
             Toast.makeText(SplashActivity.this, "Successful login", Toast.LENGTH_SHORT).show();
         } else{
-            Toast.makeText(SplashActivity.this, "Either Username or Password Wrong", Toast.LENGTH_SHORT).show();
+            Toast.makeText(SplashActivity.this, "", Toast.LENGTH_SHORT).show();
         }
     }
 
